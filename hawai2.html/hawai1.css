@@ -1,0 +1,899 @@
+yes
+.banner{
+    width: 100%;
+    height: 100vh;
+    text-align: center;
+    overflow: visible;
+    position: relative;
+    background-image: url('pic.jpg');
+    background-size: cover;
+    background-position: center;
+    animation: backgroundDown 10s linear infinite;
+}
+.banner .slider{
+	position: absolute;
+	width: 20vw;
+	height: 25vh;
+	top: 10%;
+	left: 50%;
+	transform-style: preserve-3d;
+	transform-origin: center center;
+	transform: translateX(-50%) perspective(1000px);
+}
+.rotate-clockwise, .rotate-anticlockwise {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    transform-style: preserve-3d;
+    transform-origin: center center;
+}
+
+.rotate-clockwise {
+    /* Animation handled by JavaScript */
+}
+
+.rotate-anticlockwise {
+    /* Animation handled by JavaScript */
+}
+.banner .slider .item{
+    position: absolute;
+    inset: 0 0 0 0;
+    padding: 10px;
+}
+
+.rotate-clockwise .item {
+    /* Transforms handled by JavaScript */
+}
+
+.rotate-anticlockwise .item {
+    /* Transforms handled by JavaScript */
+}
+
+@keyframes rotateClockwise {
+    from {
+        transform: rotateY(0deg);
+    }
+    to {
+        transform: rotateY(360deg);
+    }
+}
+
+@keyframes rotateAntiClockwise {
+    from {
+        transform: rotateY(0deg);
+    }
+    to {
+        transform: rotateY(-360deg);
+    }
+}
+
+
+
+.banner .slider .item:nth-child(1),
+.banner .slider .item:nth-child(2),
+.banner .slider .item:nth-child(3),
+.banner .slider .item:nth-child(4),
+.banner .slider .item:nth-child(5) {
+    transform:
+    rotateY(calc((var(--position) - 3) * (360deg / var(--quantity)))) /* Adjusted offset */
+    translateZ(25vw);
+    /* Animation handled by JavaScript */
+}
+
+.banner .slider .item:nth-child(6),
+.banner .slider .item:nth-child(7),
+.banner .slider .item:nth-child(8),
+.banner .slider .item:nth-child(9),
+.banner .slider .item:nth-child(10) {
+    transform:
+    rotateY(calc((var(--position) - 8) * (360deg / var(--quantity)))) /* Adjusted offset */
+    translateZ(25vw);
+    /* Animation handled by JavaScript */
+}
+
+@keyframes rotateClockwise {
+    from {
+        transform: rotateY(0deg);
+    }
+    to {
+        transform: rotateY(360deg);
+    }
+}
+
+@keyframes rotateAntiClockwise {
+    from {
+        transform: rotateY(0deg);
+    }
+    to {
+        transform: rotateY(-360deg);
+    }
+}
+.banner  .slider .item{
+    position: relative;
+}
+
+.banner  .slider .item video{
+    width: 70%;
+    height: 90%;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow:
+        0 0 20px 5px rgba(255, 215, 0, 0.8),
+        0 0 40px 10px rgba(255, 140, 0, 0.6),
+        0 0 60px 15px rgba(255, 69, 0, 0.4);
+    animation: glowRect 2s ease-in-out infinite alternate, spin 20s linear infinite;
+}
+
+.video-controls {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+    opacity: 0.7;
+    transition: opacity 0.3s;
+}
+
+.video-controls:hover {
+    opacity: 1;
+}
+
+.video-controls button {
+    background: rgba(0, 0, 0, 0.7);
+    border: 1px solid rgba(255, 215, 0, 0.5);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.3s;
+}
+
+.video-controls button:hover {
+    background: rgba(255, 215, 0, 0.5);
+}
+
+@media (max-width: 600px) {
+  .banner .slider {
+    width: 40vw;
+    height: 50vh;
+    left: 50%;
+    transform-origin: center center;
+    transform: translateX(-50%) perspective(1000px);
+    animation: autorun 20s linear infinite;
+  }
+  .banner .slider .item {
+    transform:
+      rotateY(calc((var(--position) - 5) * (360deg / var(--quantity))))
+      translateZ(15vw);
+  }
+}
+.tom{
+    position: absolute;
+    bottom: 100px;
+    left: 10%;
+    transform: none;
+    width: 20vw; /* Smaller width for video frame */
+    height: 40vh; /* Smaller height for video frame */
+    z-index: 10;
+    overflow: hidden;
+    border: none;
+    border-radius: 50%;
+    /* Removed background-image */
+    background-size: cover;
+    background-position: center;
+    box-shadow: none;
+}
+
+.tom video {
+    width: 100%;
+    height: 100%;
+    border-radius: 30%;
+    object-fit: cover;
+}
+
+@keyframes glow {
+    from {
+        box-shadow:
+            0 0 10px 3px rgba(255, 215, 0, 0.5),
+            0 0 20px 6px rgba(255, 140, 0, 0.4),
+            0 0 30px 9px rgba(255, 69, 0, 0.3);
+    }
+    to {
+        box-shadow:
+            0 0 20px 5px rgba(255, 215, 0, 0.8),
+            0 0 40px 10px rgba(255, 140, 0, 0.6),
+            0 0 60px 15px rgba(255, 69, 0, 0.4);
+    }
+}
+
+
+
+@keyframes backgroundDown {
+    0% {
+        background-position: center top;
+    }
+    100% {
+        background-position: center bottom;
+    }
+}
+
+@keyframes spin {
+    from {
+        transform: rotateY(0deg);
+    }
+    to {
+        transform: rotateY(360deg);
+    }
+}
+.top-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    background: transparent;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    box-sizing: border-box;
+    z-index: 1000;
+    font-family: Arial, sans-serif;
+}
+
+.top-nav .nav-left,
+.top-nav .nav-center,
+.top-nav .nav-right {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.top-nav .nav-left button,
+.top-nav .nav-right button {
+    background: transparent;
+    border: none;
+    color: rgb(114, 215, 12);
+    padding: 28px 55px;
+    margin: 10px 8px 0 8px;
+    font-size: 58px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border-radius: 30px;
+    text-shadow:
+        0 0 10px #FFD700,
+        0 0 20px #FFA500,
+        0 0 30px #FF8C00,
+        0 0 40px #FF4500;
+    animation: sunGlow 2s ease-in-out infinite alternate;
+}
+
+.top-nav .nav-left button i,
+.top-nav .nav-right button i {
+    color: blue;
+}
+
+@keyframes sunGlow {
+    from {
+        text-shadow:
+            0 0 5px #FFD700,
+            0 0 10px #FFA500,
+            0 0 15px #FF8C00,
+            0 0 20px #FF4500;
+    }
+    to {
+        text-shadow:
+            0 0 10px #FFD700,
+            0 0 20px #FFA500,
+            0 0 30px #FF8C00,
+            0 0 40px #FF4500;
+    }
+}
+
+.top-nav .nav-left button:hover,
+.top-nav .nav-right button:hover {
+    background: linear-gradient(45deg, #7cff6b, #ee0557, #c105f0);
+    color: rgb(72, 12, 226);
+    transition: background 0.5s ease;
+}
+
+.top-nav .nav-space {
+    flex-grow: 1;
+}
+
+/* Nav Center for Search Bar */
+.top-nav .nav-center {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px; /* Added margin to push search bar down */
+    position: relative;
+}
+
+/* Nav Right for Search Bar */
+.top-nav .nav-right .search-bar {
+    margin-top: 100px;
+}
+
+.search-bar input {
+    width: 600px;
+    padding: 20px 40px;
+    font-size: 50px;
+    border-radius: 30px;
+    border: 2px solid rgba(255, 215, 0, 0.7);
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    outline: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.5);
+}
+
+.search-bar input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* Hamburger Menu Button */
+.hamburger-menu {
+  position: absolute;
+  top: 20px;
+  right: 300px;
+  background: rgba(0, 0, 0, 0.5);
+  border: 2px solid rgba(255, 215, 0, 0.7);
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 60px;
+  height: 60px;
+  z-index: 1002;
+  padding: 5px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.hamburger-menu span {
+  width: 100%;
+  height: 4px;
+  background: white;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+.hamburger-menu:hover {
+  background: rgba(255, 215, 0, 0.2);
+}
+
+/* Hamburger to X animation */
+.hamburger-menu.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger-menu.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger-menu.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(7px, -6px);
+}
+
+/* Side Menu */
+.side-menu {
+  position: fixed;
+  top: 0;
+  right: -300px;
+  width: 300px;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.9);
+  transition: right 0.3s ease;
+  z-index: 1001;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.side-menu.open {
+  right: 0;
+}
+
+.close-menu {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.menu-dropdown {
+  margin-bottom: 20px;
+}
+
+.menu-btn {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 18px;
+  cursor: pointer;
+  width: 100%;
+  text-align: left;
+  padding: 10px 0;
+}
+
+.menu-content {
+  display: none;
+  padding-left: 20px;
+}
+
+.menu-content a {
+  display: block;
+  color: white;
+  text-decoration: none;
+  padding: 5px 0;
+}
+
+.menu-content a:hover {
+  color: #FFD700;
+}
+
+.theme-toggle {
+  margin-top: 20px;
+}
+
+.theme-toggle label {
+  color: white;
+  font-size: 16px;
+}
+
+.theme-toggle input {
+  margin-left: 10px;
+}
+
+/* Modal Styles */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 2000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.modal-content {
+  background-color: #fff;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  max-width: 600px;
+  border-radius: 10px;
+  position: relative;
+}
+
+.close-modal {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.close-modal:hover,
+.close-modal:focus {
+  color: black;
+  text-decoration: none;
+}
+
+.modal-video {
+  width: 100%;
+  height: auto;
+}
+
+.modal-controls {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 10px;
+}
+
+.modal-controls button {
+  background: #FFD700;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.modal-controls button:hover {
+  background: #FFA500;
+}
+
+.comments {
+  margin-top: 20px;
+}
+
+.comments h4 {
+  margin-bottom: 10px;
+}
+
+.comment {
+  margin-bottom: 10px;
+  padding: 5px;
+  background: #f1f1f1;
+  border-radius: 5px;
+}
+
+.comment-input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.add-comment-btn {
+  background: #FFD700;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.add-comment-btn:hover {
+  background: #FFA500;
+}
+
+/* Solar System */
+#solar-system {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  height: 400px;
+}
+
+.sun {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50px;
+  height: 50px;
+  background: yellow;
+  border-radius: 50%;
+  box-shadow: 0 0 20px yellow;
+}
+
+.orbit {
+  position: absolute;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 50%;
+}
+
+.mercury-orbit {
+  width: 80px;
+  height: 80px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: orbit 2s linear infinite;
+}
+
+.venus-orbit {
+  width: 120px;
+  height: 120px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: orbit 3s linear infinite;
+}
+
+.earth-orbit {
+  width: 160px;
+  height: 160px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: orbit 4s linear infinite;
+}
+
+.mars-orbit {
+  width: 200px;
+  height: 200px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: orbit 5s linear infinite;
+}
+
+.jupiter-orbit {
+  width: 240px;
+  height: 240px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: orbit 6s linear infinite;
+}
+
+.saturn-orbit {
+  width: 280px;
+  height: 280px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: orbit 7s linear infinite;
+}
+
+.uranus-orbit {
+  width: 320px;
+  height: 320px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: orbit 8s linear infinite;
+}
+
+.neptune-orbit {
+  width: 360px;
+  height: 360px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: orbit 9s linear infinite;
+}
+
+.planet {
+  position: absolute;
+  border-radius: 50%;
+}
+
+.mercury {
+  width: 8px;
+  height: 8px;
+  background: gray;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.venus {
+  width: 12px;
+  height: 12px;
+  background: orange;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.earth {
+  width: 12px;
+  height: 12px;
+  background: blue;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.mars {
+  width: 10px;
+  height: 10px;
+  background: red;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.jupiter {
+  width: 20px;
+  height: 20px;
+  background: brown;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.saturn {
+  width: 18px;
+  height: 18px;
+  background: goldenrod;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.uranus {
+  width: 14px;
+  height: 14px;
+  background: lightblue;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.neptune {
+  width: 14px;
+  height: 14px;
+  background: blue;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+@keyframes orbit {
+  from {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
+/* Snow Container */
+#snow-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.snowflake {
+  position: absolute;
+  background: white;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+/* Leaves Container */
+#leaves-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Dropdown Menu Styles */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.nav-right .dropdown {
+  position: absolute;
+  top: 20px;
+  right: 80px;
+}
+
+.nav-right .dropdown button {
+  padding: 10px 20px;
+  font-size: 18px;
+  margin: 0;
+}
+
+.dropdown button {
+  background: transparent;
+  border: none;
+  color: rgb(114, 215, 12);
+  padding: 28px 55px;
+  margin: 10px 8px 0 8px;
+  font-size: 58px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  border-radius: 30px;
+  text-shadow:
+    0 0 10px #FFD700,
+    0 0 20px #FFA500,
+    0 0 30px #FF8C00,
+    0 0 40px #FF4500;
+  animation: sunGlow 2s ease-in-out infinite alternate;
+}
+
+.dropdown button i {
+  color: blue;
+}
+
+.dropdown:hover button {
+  background: linear-gradient(45deg, #7cff6b, #ee0557, #c105f0);
+  color: rgb(72, 12, 226);
+  transition: background 0.5s ease;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: rgba(0,0,0,0.9);
+  min-width: 250px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.7);
+  border-radius: 10px;
+  padding: 10px 0;
+  z-index: 1001;
+  top: 100%;
+  left: 0;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+  opacity: 1;
+  visibility: visible;
+}
+
+.dropdown-content li {
+  color: white;
+  padding: 12px 20px;
+  cursor: pointer;
+  position: relative;
+  list-style: none;
+}
+
+.dropdown-content li:hover {
+  background-color: rgba(255, 215, 0, 0.3);
+}
+
+.submenu {
+  display: none;
+  position: absolute;
+  left: 100%;
+  top: 0;
+  background-color: rgba(0,0,0,0.9);
+  min-width: 220px;
+  border-radius: 10px;
+  padding: 10px 0;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.7);
+  z-index: 1002;
+}
+
+.dropdown-content li:hover > .submenu {
+  display: block;
+}
+
+.submenu li {
+  color: white;
+  padding: 10px 20px;
+  cursor: pointer;
+  position: relative;
+  list-style: none;
+}
+
+.sub-submenu {
+  display: none;
+  position: absolute;
+  left: 100%;
+  top: 0;
+  background-color: rgba(0,0,0,0.9);
+  min-width: 200px;
+  border-radius: 10px;
+  padding: 10px 0;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.7);
+  z-index: 1003;
+}
+
+.submenu li:hover > .sub-submenu {
+  display: block;
+}
+
+.sub-submenu li {
+  color: white;
+  padding: 8px 20px;
+  cursor: pointer;
+  list-style: none;
+}
+
+.submenu li:hover,
+.sub-submenu li:hover {
+  background-color: rgba(255, 215, 0, 0.3);
+}

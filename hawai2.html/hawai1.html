@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="hawai1.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <nav class="top-nav">
+        <div class="nav-left">
+            <button><i class="fas fa-home"></i> Home</button>
+            <button onclick="window.open('video storage.html', '_blank')"><i class="fas fa-video"></i> Videos</button>
+            <button><i class="fas fa-info-circle"></i> About</button>
+        </div>
+        <div class="nav-center">
+            <div class="search-bar">
+                <input type="text" placeholder="Search..." id="search-input-center">
+            </div>
+        </div>
+        <div class="nav-right">
+            <div class="search-bar" style="margin-right: 120px; padding-top: 20px;">
+                <input type="text" placeholder="Search..." id="search-input" style="width: 1200px; padding: 40px 80px; font-size: 56px; border-radius: 50px; border: 2px solid rgba(255, 215, 0, 0.5); background: rgba(255, 255, 255, 0.1); color: white; font-weight: bold; outline: none; box-shadow: 0 0 10px rgba(255, 215, 0, 0.3);">
+            </div>
+            <!-- Hamburger Menu Button -->
+            <button class="hamburger-menu" id="hamburger-menu" aria-label="Toggle menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <button class="close-menu" id="close-menu" aria-label="Close menu" style="display:none; position:absolute; top:20px; right:20px; background: transparent; border:none; color:white; font-size: 40px; cursor:pointer; z-index: 1003;">&times;</button>
+        </div>
+    </nav>
+
+    <!-- Search Results -->
+    <div id="search-results" style="display: none; position: absolute; top: 200px; left: 50%; transform: translateX(-50%); background: rgba(0,0,0,0.9); border-radius: 10px; padding: 20px; max-width: 800px; width: 90%; z-index: 1500;"></div>
+
+    <!-- Side Menu -->
+    <div class="side-menu" id="side-menu">
+        <div class="side-menu-content">
+            <button class="close-menu" id="close-menu">&times;</button>
+            <h2>Menu</h2>
+
+
+
+            <!-- Dropdown Menus -->
+            <div class="menu-dropdown">
+                <button class="menu-btn" id="profile-btn">Profile ▼</button>
+                <div class="menu-content" id="profile-content">
+                    <a href="#" id="login-link">Login</a>
+                    <a href="#" id="register-link">Register</a>
+                    <a href="#" id="logout-link">Logout</a>
+                    <a href="#" id="settings-link">Settings</a>
+                </div>
+            </div>
+
+            <div class="menu-dropdown">
+                <button class="menu-btn" id="settings-btn">Settings ▼</button>
+                <div class="menu-content" id="settings-content">
+                    <a href="#">General</a>
+                    <a href="#">Privacy</a>
+                    <a href="#">Notifications</a>
+                </div>
+            </div>
+
+            <div class="menu-dropdown">
+                <button class="menu-btn" id="help-btn">Help ▼</button>
+                <div class="menu-content" id="help-content">
+                    <a href="#">FAQ</a>
+                    <a href="#">Support</a>
+                    <a href="#">Contact Us</a>
+                </div>
+            </div>
+
+            <!-- Dark Mode Toggle -->
+            <div class="theme-toggle">
+                <label for="dark-mode-toggle">Dark Mode</label>
+                <input type="checkbox" id="dark-mode-toggle">
+            </div>
+        </div>
+    </div>
+      <div class="banner">
+        <video class="video-background" autoplay muted loop poster="earth.jpg" style="position:absolute; top:0; left:0; width:100%; height:100%; object-fit:cover; z-index: -1;">
+          <source src="videoplayback.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+        <div class="effects-container">
+          <div class="slider" style="--quantity: 10">
+            <div class="rotate-clockwise">
+              <div class="item" style="--position: 1">
+                <video autoplay muted loop style="width: 70%; height: 90%; object-fit: cover;">
+                  <source src="2songs.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+                <div class="video-controls">
+                  <button class="play-btn">▶</button>
+                  <button class="pause-btn">⏸</button>
+                </div>
+              </div>
+              <div class="item" style="--position: 2">
+                <video autoplay muted loop style="width: 70%; height: 90%; object-fit: cover;">
+                  <source src="3song.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+                <div class="video-controls">
+                  <button class="play-btn">▶</button>
+                  <button class="pause-btn">⏸</button>
+                </div>
+              </div>
+              <div class="item" style="--position: 3">
+                <video autoplay muted loop style="width: 70%; height: 90%; object-fit: cover;">
+                  <source src="4song.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+                <div class="video-controls">
+                  <button class="play-btn">▶</button>
+                  <button class="pause-btn">⏸</button>
+                </div>
+              </div>
+              <div class="item" style="--position: 4">
+                <video autoplay muted loop style="width: 70%; height: 90%; object-fit: cover;">
+                  <source src="5song.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+                <div class="video-controls">
+                  <button class="play-btn">▶</button>
+                  <button class="pause-btn">⏸</button>
+                </div>
+              </div>
+              <div class="item" style="--position: 5">
+                <video autoplay muted loop style="width: 70%; height: 90%; object-fit: cover;">
+                  <source src="6song.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+                <div class="video-controls">
+                  <button class="play-btn">▶</button>
+                  <button class="pause-btn">⏸</button>
+                </div>
+              </div>
+            </div>
+            <div class="rotate-anticlockwise">
+              <div class="item" style="--position: 6">
+                <video autoplay muted loop style="width: 70%; height: 90%; object-fit: cover;">
+                  <source src="james2.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+                <div class="video-controls">
+                  <button class="play-btn">▶</button>
+                  <button class="pause-btn">⏸</button>
+                </div>
+              </div>
+              <div class="item" style="--position: 7">
+                <video autoplay muted loop style="width: 70%; height: 90%; object-fit: cover;">
+                  <source src="8song.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+                <div class="video-controls">
+                  <button class="play-btn">▶</button>
+                  <button class="pause-btn">⏸</button>
+                </div>
+              </div>
+              <div class="item" style="--position: 8">
+                <video autoplay muted loop style="width: 70%; height: 90%; object-fit: cover;">
+                  <source src="videoplayback.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+                <div class="video-controls">
+                  <button class="play-btn">▶</button>
+                  <button class="pause-btn">⏸</button>
+                </div>
+              </div>
+              <div class="item" style="--position: 9">
+                <video autoplay muted loop style="width: 70%; height: 90%; object-fit: cover;">
+                  <source src="10song.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+                <div class="video-controls">
+                  <button class="play-btn">▶</button>
+                  <button class="pause-btn">⏸</button>
+                </div>
+              </div>
+              <div class="item" style="--position: 10">
+                <video autoplay muted loop style="width: 70%; height: 90%; object-fit: cover;">
+                  <source src="lastvideo.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+                <div class="video-controls">
+                  <button class="play-btn">▶</button>
+                  <button class="pause-btn">⏸</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="tom">
+            <video autoplay muted loop style="width: 100%; height: 100%; border-radius: 40%; object-fit: cover;">
+              <source src="9song.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </div>
+        </div>
+
+    <!-- Solar System -->
+    <div id="solar-system">
+        <div class="sun"></div>
+        <div class="orbit mercury-orbit">
+            <div class="planet mercury"></div>
+        </div>
+        <div class="orbit venus-orbit">
+            <div class="planet venus"></div>
+        </div>
+        <div class="orbit earth-orbit">
+            <div class="planet earth"></div>
+        </div>
+        <div class="orbit mars-orbit">
+            <div class="planet mars"></div>
+        </div>
+        <div class="orbit jupiter-orbit">
+            <div class="planet jupiter"></div>
+        </div>
+        <div class="orbit saturn-orbit">
+            <div class="planet saturn"></div>
+        </div>
+        <div class="orbit uranus-orbit">
+            <div class="planet uranus"></div>
+        </div>
+        <div class="orbit neptune-orbit">
+            <div class="planet neptune"></div>
+        </div>
+    </div>
+
+    <!-- Snow container -->
+    <div id="snow-container"></div>
+
+    <!-- Leaves container -->
+    <div id="leaves-container"></div>
+
+<script src="hawai.js"></script>
+<script src="reptile-follow.js"></script>
+
+<!-- Modal for Video Player -->
+<div class="modal" id="video-modal">
+    <div class="modal-content">
+        <button id="close-modal">&times;</button>
+        <video id="modal-video" controls>
+            Your browser does not support the video tag.
+        </video>
+        <div class="modal-controls">
+            <button id="like-btn"><i class="fas fa-thumbs-up"></i> Like</button>
+            <button id="dislike-btn"><i class="fas fa-thumbs-down"></i> Dislike</button>
+            <button id="share-btn"><i class="fas fa-share"></i> Share</button>
+            <button id="back-home-btn"><i class="fas fa-home"></i> Back to Home</button>
+        </div>
+        <div class="comments">
+            <h4>Comments</h4>
+            <div id="comments-list">
+                <div class="comment">User1: Great video!</div>
+                <div class="comment">User2: Love it!</div>
+            </div>
+            <input type="text" placeholder="Add a comment..." id="comment-input">
+            <button id="add-comment-btn">Comment</button>
+        </div>
+    </div>
+</div>
+<div id="anaconda-container" style="position: fixed; width: 800px; height: 800px; pointer-events: none; z-index: 3000; clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);">
+  <video id="anaconda-video" src="anaconda.mp4" autoplay muted loop style="width: 100%; height: 100%; object-fit: contain; border-radius: 20px;"></video>
+</div>
+
+<script>
+const anacondaContainer = document.getElementById('anaconda-container');
+
+document.addEventListener('mousemove', e => {
+  const x = e.clientX;
+  const y = e.clientY;
+  anacondaContainer.style.left = (x - anacondaContainer.offsetWidth / 2) + 'px';
+  anacondaContainer.style.top = (y - anacondaContainer.offsetHeight / 2) + 'px';
+
+  // Optional: rotate slightly based on mouse movement direction
+  if (typeof lastX !== 'undefined' && typeof lastY !== 'undefined') {
+    const dx = x - lastX;
+    const dy = y - lastY;
+    const angle = Math.atan2(dy, dx) * 180 / Math.PI;
+    anacondaContainer.style.transform = `rotate(${angle}deg)`;
+  }
+  lastX = x;
+  lastY = y;
+});
+</script>
+
+</body>
+</html>
+<script src=" ui-update.js\></script>
